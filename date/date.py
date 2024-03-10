@@ -103,6 +103,12 @@ class Date:
     def __str__(self):
         return f"{self.year}/{self.month}/{self.mday}"
 
+    # F Date substraction
+    
+    def __sub__(self, other):
+        assert type(other) == Date, f"Substracting two dates - both objects must be Date type"
+        return self.day - other.day # Returns the difference as an int (number of days) 
+
 
 class DateCal(Date):
     days = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
